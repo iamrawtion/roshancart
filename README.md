@@ -1,4 +1,4 @@
-# Shopping-Cart
+# Shopping-Cart forked from devnoorfatima/Shopping-Cart
 It is a Shopping Cart project that has a checkout page too.
 
 # What things I made use of:
