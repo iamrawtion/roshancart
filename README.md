@@ -26,4 +26,4 @@ It is a Shopping Cart project that has a checkout page too.
 * Fill the checkout Page.
 
 ## You can watch it live here:
-https://roshancart.github.io
+https://iamrawtion.github.io/roshancart
