@@ -50,6 +50,11 @@
   </nav>
   <!-- navbar ends here -->
   <h1 class="text-center mt-3 m-5">Welcome to the ShopNow</h1>
+
+  <!-- page layout: products + live cart sidebar -->
+  <div class="page-layout">
+    <div class="products-area">
+
   <!-- cards starts here -->
   <!-- Grocery part starts here -->
   <h2 class="text-center"><i class="fas fa-shopping-basket mr-2"></i>Grocery</h2>
@@ -180,6 +185,20 @@
 
   <!-- shoes part ends here -->
   <!-- cards ends here -->
+
+    </div><!-- end products-area -->
+
+    <!-- live cart sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <h5><i class="fas fa-cart-arrow-down mr-2"></i>My Cart</h5>
+      <ul class="sidebar-list" id="sidebarList">
+        <li class="empty-msg">Your cart is empty</li>
+      </ul>
+      <div class="sidebar-total" id="sidebarTotal"></div>
+      <a href="checkout.html" class="btn sidebar-checkout">Checkout</a>
+    </div>
+
+  </div><!-- end page-layout -->
 
   <!-- modal starts here -->
   <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"

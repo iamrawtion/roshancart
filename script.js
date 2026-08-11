@@ -57,7 +57,27 @@ function addToCart(x) {
     const result = products[x].name + " " + span;
     if (item.includes(products[x]) === false) item.push(result);
     bill.push(products[x].price);
+    updateSidebar();
+}
 
+function updateSidebar() {
+    const sidebarList = document.getElementById('sidebarList');
+    const sidebarTotal = document.getElementById('sidebarTotal');
+    if (!sidebarList) return;
+
+    sidebarList.innerHTML = '';
+    if (item.length === 0) {
+        sidebarList.innerHTML = '<li class="empty-msg">Your cart is empty</li>';
+        sidebarTotal.innerHTML = '';
+        return;
+    }
+    item.forEach(entry => {
+        const li = document.createElement('li');
+        li.innerHTML = entry;
+        sidebarList.appendChild(li);
+    });
+    const total = bill.reduce((acc, val) => parseFloat(acc) + parseFloat(val), 0);
+    sidebarTotal.innerHTML = `Total: <span>$${total.toFixed(2)}</span>`;
 }
 
 function cart() {
