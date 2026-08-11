@@ -43,38 +43,36 @@
     </div>
     <!-- icons end here -->
     <!-- Checkout starts here -->
-    <form class="form">
+    <form class="form" onsubmit="return false;">
         <div class="row bord p-4 shadow-lg m-5">
             <div class="col-sm-6">
                 <div class="col-sm-6 mt-2 row">
                     <h5 class="my-auto">First Name :</h5>
-                    <input class="ml-3 name input" type="text" placeholder="First Name" required />
-                <p class="err">Enter alphabets please!!</p>
+                    <input id="firstName" class="ml-3 name input" type="text" placeholder="First Name" />
                 </div>
                 <div class="col-sm-6 mt-2 row ">
                     <h5 class="my-auto">Email :</h5>
-                    <input class="ml-3 input" type="email" placeholder="Email" required />
+                    <input id="email" class="ml-3 input" type="text" placeholder="Email" />
                 </div>
                 <div class="col-sm-6 mt-3 row ">
                     <h5 class="my-auto">Address :</h5>
-                    <input class="ml-3 input" type="text" placeholder="Address" required />
+                    <input id="address" class="ml-3 input" type="text" placeholder="Address" />
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="col-sm-6 mt-2 row">
                     <h5 class="my-auto name my-auto">Last Name :</h5>
-                    <input class="ml-3 input" type="text" placeholder="Last Name" required />
+                    <input id="lastName" class="ml-3 input" type="text" placeholder="Last Name" />
                 </div>
                 <div class="col-sm-6 mt-2 row">
                     <h5 class="my-auto my-auto">Password :</h5>
-                    <input class="ml-3 input caps" title="(4-8 characters)" type="password" minlength="4" maxlength="8"
-                        placeholder="Password" required />
+                    <input id="password" class="ml-3 input caps" title="(4-8 characters)" type="password"
+                        placeholder="Password" />
                     <p id="text">Your Caps-Lock is on!</p>
                 </div>
                 <div class="col-sm-6 mt-3 row">
                     <h5 class="my-auto my-auto">Phone Number :</h5>
-                    <input class="ml-3 validation input" type="number" placeholder="Phone No." required />
-                    <p class="text">Invalid phone number!!</p>
+                    <input id="phone" class="ml-3 validation input" type="text" placeholder="Phone No." />
                 </div>
             </div>
         </div>

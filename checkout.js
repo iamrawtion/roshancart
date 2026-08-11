@@ -1,37 +1,41 @@
-// Get the input field
 let input = document.querySelector(".caps");
-
-// Get the warning text
 let text = document.getElementById("text");
 
-// When the user presses any key on the keyboard, run the function
 input.addEventListener("keyup", function (event) {
-
-    // If "caps lock" is pressed, display the warning text
     if (event.getModifierState("CapsLock")) {
         text.style.display = "block";
     } else {
-        text.style.display = "none"
+        text.style.display = "none";
     }
 });
-const phone = document.querySelector('.validation');
-const name = document.querySelector('.name');
-const err = document.querySelector('.err');  
+
+const firstNames = ["Alex", "Jordan", "Taylor", "Morgan", "Casey", "Riley", "Jamie", "Drew"];
+const lastNames  = ["Smith", "Johnson", "Lee", "Brown", "Davis", "Wilson", "Moore", "Clark"];
+const streets    = ["12 Maple St", "7 Oak Ave", "99 Pine Rd", "42 Elm Blvd", "3 Cedar Lane"];
+const domains    = ["gmail.com", "yahoo.com", "outlook.com", "mail.com"];
+
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function randPhone() { return "+1" + Math.floor(1000000000 + Math.random() * 9000000000); }
+function randPass() { return Math.random().toString(36).slice(2, 8); }
+
+function autofill() {
+    const fn = pick(firstNames);
+    const ln = pick(lastNames);
+    const fields = {
+        firstName: fn,
+        lastName:  ln,
+        email:     fn.toLowerCase() + ln.toLowerCase() + Math.floor(Math.random()*99) + "@" + pick(domains),
+        address:   pick(streets),
+        phone:     randPhone(),
+        password:  randPass()
+    };
+    for (const [id, val] of Object.entries(fields)) {
+        const el = document.getElementById(id);
+        if (el && !el.value.trim()) el.value = val;
+    }
+}
 
 function validate() {
-        let regex = /^\+(?:[0-9] ?){6,14}[0-9]$/;
-        if (regex.test(phone.value)) {
-            console.log(phone.value);
-            return true;
-        } else {
-        const txt = document.querySelector('.text'); 
-        txt.style.display='block';      
-        }
-        let rgx =/[a-zA-Z]+/g;
-        if (rgx.test(name.value)) {
-            console.log(name.value);
-            return true;
-        } else {
-          err.style.display='block';     
-        }
-    }
+    autofill();
+    window.location.href = "thankyou.html";
+}
