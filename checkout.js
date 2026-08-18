@@ -37,5 +37,11 @@ function autofill() {
 
 function validate() {
     autofill();
-    window.location.href = "thankyou.html";
+    const checkoutUrl = sessionStorage.getItem('shopify_checkout_url');
+    if (!checkoutUrl) {
+        alert('Your cart is empty. Please add items before checking out.');
+        window.location.href = 'grocery.html';
+        return;
+    }
+    window.location.href = checkoutUrl;
 }
